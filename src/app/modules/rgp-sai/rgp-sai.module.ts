@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FishermenComponent } from './pages/fishermen/fishermen.component';
 import { BoatsComponent } from './pages/boats/boats.component';
@@ -21,6 +21,7 @@ import { AvatarModule } from 'ngx-avatar';
   exports: [
     FishermenComponent,
     BoatsComponent
-  ]
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class RgpSaiModule { }

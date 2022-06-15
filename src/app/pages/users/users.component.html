@@ -7,10 +7,10 @@
                     <input type="text" name="search" placeholder="Buscar usuario" class="form-control w-auto" (input)="filterUsers($event)" />
                     <button type="button"  class="btn btn-primary ml-auto" (click)="openModal(modalAddUser)"><i class="fas fa-plus"></i> Agregar Usuario</button>
                     <button *ngIf="id_view === 0" type="button" class="btn btn-danger ml-1" (click)='giveDataOff(false)'>
-                        <i class="fas fa-minus-circle" name="Inhabilitados"></i> 
+                        <i class="fas fa-minus-circle" name="Inhabilitados"></i>
                     </button>
                     <button *ngIf="id_view !== 0" type="button" class="btn btn-success ml-1" (click)='giveDataOff(true)'>
-                        <i class="fas fa-check-circle" name="Habilitados"></i> 
+                        <i class="fas fa-check-circle" name="Habilitados"></i>
                     </button>
                 </div>
                 <div class="table-responsive">
@@ -51,11 +51,11 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="d-flex justify-content-center mt-2">    
+                <div class="d-flex justify-content-center mt-2">
                     <ngb-pagination [(page)]="numberPages"
                     [pageSize]="numberUserShow"
                     [collectionSize]="usersArray.length"
-                    [maxSize]="5"></ngb-pagination>
+                    ></ngb-pagination>
                 </div>
             </div>
         </div>
@@ -148,7 +148,7 @@
                     </div>
                 </div>
             </div>
-                       
+
             <div class="form-group row">
                 <label for="area" class="col-sm-4 col-form-label">Area</label>
                 <div class="col-sm-8">
@@ -161,7 +161,7 @@
                         <p>{{ getErrorMessage("area") }}</p>
                     </div>
                 </div>
-            </div>            
+            </div>
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-dark" (click)="closeModal()">Cerrar</button>
@@ -175,21 +175,21 @@
 
 <!--- Modal edit user -->
 <ng-template #editUserModal let-modal>
-  
+
     <div class="modal-header">
-  
+
       <h5 class="modal-title" id="editUserLabel">Editar Usuario</h5>
-  
+
       <button type="button" class="close" (click)="closeModal()" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-  
+
     </div>
-  
+
     <div class="modal-body">
-  
+
       <form [formGroup]="formEditUser" (ngSubmit)="updateDataUser(formEditUser.value)">
-  
+
         <div class="form-group row">
             <label for="email" class="col-sm-4 col-form-label">Correo</label>
             <div class="col-sm-8">
@@ -275,11 +275,11 @@
                     <p>{{ getErrorMessageEdit("area") }}</p>
                 </div>
             </div>
-        </div> 
+        </div>
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
-  
+
           <button type="submit" class="btn btn-primary">Editar</button>
         </div>
       </form>

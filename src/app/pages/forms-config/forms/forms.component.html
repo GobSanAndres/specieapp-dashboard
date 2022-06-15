@@ -7,10 +7,10 @@
                     <input type="text" name="search" placeholder="Buscar formulario" class="form-control w-auto" (input)="filterForm($event)" />
                     <button type="button"  class="btn btn-primary ml-auto" (click)="openModal(modalAddForm)"><i class="fas fa-plus"></i> Agregar Formulario</button>
                     <button *ngIf="id_view === 0" type="button" class="btn btn-danger ml-1" (click)='giveDataOff(false)'>
-                        <i class="fas fa-minus-circle" name="Inhabilitados"></i> 
+                        <i class="fas fa-minus-circle" name="Inhabilitados"></i>
                     </button>
                     <button *ngIf="id_view !== 0" type="button" class="btn btn-success ml-1" (click)='giveDataOff(true)'>
-                        <i class="fas fa-check-circle" name="Habilitados"></i> 
+                        <i class="fas fa-check-circle" name="Habilitados"></i>
                     </button>
                 </div>
                 <div class="table-responsive">
@@ -55,11 +55,11 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="d-flex justify-content-center mt-2">    
+                <div class="d-flex justify-content-center mt-2">
                     <ngb-pagination [(page)]="numberPages"
                     [pageSize]="numberDataShow"
                     [collectionSize]="formArray.length"
-                    [maxSize]="5"></ngb-pagination>
+                    ></ngb-pagination>
                 </div>
             </div>
         </div>
@@ -68,21 +68,21 @@
 
 <!--- Modal add form -->
 <ng-template #modalAddForm let-modal>
-  
+
     <div class="modal-header">
-  
+
       <h5 class="modal-title" id="editLabel">Agregar Formulario</h5>
-  
+
       <button type="button" class="close" (click)="closeModal()" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-  
+
     </div>
-  
+
     <div class="modal-body">
-  
+
       <form [formGroup]="formForm" (ngSubmit)="saveDataForm()">
-  
+
         <div class="form-group row">
             <label for="code" class="col-sm-4 col-form-label">Código </label>
             <div class="col-sm-8">
@@ -93,7 +93,7 @@
                     <p>{{ getErrorMessage("code") }}</p>
                 </div>
             </div>
-        </div> 
+        </div>
 
         <div class="form-group row">
             <label for="description" class="col-sm-4 col-form-label">Descripción</label>
@@ -128,7 +128,7 @@
                     <p>{{ getErrorMessageEdit("category") }}</p>
                 </div>
             </div>
-        </div> 
+        </div>
 
         <div class="form-group row">
             <label for="approvalDate" class="col-sm-4 col-form-label">Fecha Aprobado</label>
@@ -142,7 +142,7 @@
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
-  
+
           <button type="submit" class="btn btn-primary">Guardar</button>
         </div>
       </form>
@@ -151,21 +151,21 @@
 
 <!--- Modal edit form -->
 <ng-template #modalEditForm let-modal>
-  
+
     <div class="modal-header">
-  
+
       <h5 class="modal-title" id="editLabel">Editar Formulario</h5>
-  
+
       <button type="button" class="close" (click)="closeModal()" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-  
+
     </div>
-  
+
     <div class="modal-body">
-  
+
       <form [formGroup]="formEditForm" (ngSubmit)="updateDataForm()">
-  
+
 
         <div class="form-group row">
             <label for="code" class="col-sm-4 col-form-label">Código</label>
@@ -177,7 +177,7 @@
                     <p>{{ getErrorMessageEdit("code") }}</p>
                 </div>
             </div>
-        </div> 
+        </div>
 
         <div class="form-group row">
             <label for="description" class="col-sm-4 col-form-label">Descripción</label>
@@ -212,7 +212,7 @@
                     <p>{{ getErrorMessageEdit("category") }}</p>
                 </div>
             </div>
-        </div> 
+        </div>
 
         <div class="form-group row">
             <label for="approvalDate" class="col-sm-4 col-form-label">Fecha Aprobado</label>
@@ -222,11 +222,11 @@
                     <p>{{ getErrorMessageEdit("approvalDate") }}</p>
                 </div>
             </div>
-        </div> 
+        </div>
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
-  
+
           <button type="submit" class="btn btn-primary">Guardar</button>
         </div>
       </form>

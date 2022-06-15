@@ -6,11 +6,11 @@
                 <div class="d-md-flex mt-3">
                     <input type="text" name="search" placeholder="Buscar control de peso" class="form-control w-auto" (input)="filterWeightCheck($event)" />
                     <button *ngIf="id_view === 0" type="button" class="btn btn-danger ml-1" (click)='giveDataOff(false)'>
-                        <i class="fas fa-minus-circle" name="Inhabilitados"></i> 
+                        <i class="fas fa-minus-circle" name="Inhabilitados"></i>
                     </button>
                     <button *ngIf="id_view !== 0" type="button" class="btn btn-success ml-1" (click)='giveDataOff(true)'>
-                        <i class="fas fa-check-circle" name="Habilitados"></i> 
-                    </button>   
+                        <i class="fas fa-check-circle" name="Habilitados"></i>
+                    </button>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-striped no-wrap border mt-4">
@@ -54,11 +54,11 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="d-flex justify-content-center mt-2">    
+                <div class="d-flex justify-content-center mt-2">
                     <ngb-pagination [(page)]="numberPages"
                     [pageSize]="numberDataShow"
                     [collectionSize]="weightCheckArray.length"
-                    [maxSize]="5"></ngb-pagination>
+                    ></ngb-pagination>
                 </div>
             </div>
         </div>
@@ -67,21 +67,21 @@
 
 <!--- Modal edit WeightCheck -->
 <ng-template #editWeightCheckModal let-modal>
-  
+
     <div class="modal-header">
-  
+
       <h5 class="modal-title" id="editLabel">Editar Control de peso</h5>
-  
+
       <button type="button" class="close" (click)="closeModal()" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-  
+
     </div>
-  
+
     <div class="modal-body">
-  
+
       <form [formGroup]="formEditWeightCheck" (ngSubmit)="updateDataWeightCheck()">
-  
+
         <div class="form-group row">
             <label for="motorShip" class="col-sm-4 col-form-label">Motonave</label>
             <div class="col-sm-8">
@@ -104,7 +104,7 @@
                     <p>{{ getErrorMessageEdit("place") }}</p>
                 </div>
             </div>
-        </div> 
+        </div>
 
         <div class="form-group row">
             <label for="create_by" class="col-sm-4 col-form-label">Creado por</label>
@@ -116,7 +116,7 @@
                     <p>{{ getErrorMessageEdit("create_by") }}</p>
                 </div>
             </div>
-        </div> 
+        </div>
 
         <div class="form-group row">
             <label for="weight_check_specie" class="col-sm-4 col-form-label">Especies</label>
@@ -131,8 +131,8 @@
                     <i class="ti-pencil m-r-10 cursor" [ngClass]="{'disable': posSpecie === undefined, 'text-info': posSpecie !== undefined}" ></i>
                 </a>
             </div>
-        </div> 
-        
+        </div>
+
         <div class="form-group row">
             <label for="products_below_size" class="col-sm-4 col-form-label">Productos debajo de talla</label>
             <div class="col-sm-8">
@@ -144,7 +144,7 @@
                     <p>{{ getErrorMessageEdit("products_below_size") }}</p>
                 </div>
             </div>
-        </div>  
+        </div>
         <div class="form-group row">
             <label for="number_of_ovate_females" class="col-sm-4 col-form-label"># Hembras ovadas</label>
             <div class="col-sm-8">
@@ -153,7 +153,7 @@
                     <p>{{ getErrorMessageEdit("number_of_ovate_females") }}</p>
                 </div>
             </div>
-        </div>  
+        </div>
         <div class="form-group row">
             <label for="number_of_tails_below_size" class="col-sm-4 col-form-label">Colas por debajo de talla</label>
             <div class="col-sm-8">
@@ -162,7 +162,7 @@
                     <p>{{ getErrorMessageEdit("number_of_tails_below_size") }}</p>
                 </div>
             </div>
-        </div>  
+        </div>
         <div class="form-group row">
             <label for="total_weight" class="col-sm-4 col-form-label">Peso Total</label>
             <div class="col-sm-8">
@@ -171,7 +171,7 @@
                     <p>{{ getErrorMessageEdit("total_weight") }}</p>
                 </div>
             </div>
-        </div>  
+        </div>
 
         <div class="form-group row">
             <label for="names_people_sampling" class="col-sm-4 col-form-label">Personas</label>
@@ -186,7 +186,7 @@
                     <i class="ti-pencil m-r-10 cursor" [ngClass]="{'disable': posPeople === undefined, 'text-info': posPeople !== undefined}" ></i>
                 </a>
             </div>
-        </div> 
+        </div>
 
         <div class="form-group row">
             <label for="issue_date" class="col-sm-4 col-form-label">Fecha de Registro</label>
@@ -200,7 +200,7 @@
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
-  
+
           <button type="submit" class="btn btn-primary">Editar</button>
         </div>
       </form>
@@ -209,21 +209,21 @@
 
   <!--- Modal edit Specie -->
 <ng-template #editModalEspecies let-modal>
-  
+
     <div class="modal-header">
-  
+
       <h5 class="modal-title" id="editLabel">Editar Especie</h5>
-  
+
       <button type="button" class="close" (click)="closeModalS()" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-  
+
     </div>
-  
+
     <div class="modal-body">
-  
+
       <form [formGroup]="formEditSpecie" (ngSubmit)="saveChangeSpecie(formEditSpecie.value)">
-  
+
 
         <div class="form-group row">
             <label for="specie" class="col-sm-4 col-form-label">Especie</label>
@@ -257,7 +257,7 @@
                     <p>{{ getErrorMessageEditSpecie("weight") }}</p>
                 </div>
             </div>
-        </div>  
+        </div>
 
         <div class="form-group row">
             <label for="size" class="col-sm-4 col-form-label">Talla (cm)</label>
@@ -267,7 +267,7 @@
                     <p>{{ getErrorMessageEditSpecie("size") }}</p>
                 </div>
             </div>
-        </div> 
+        </div>
         <div class="form-group row">
             <label for="sex" class="col-sm-4 col-form-label">Sexo</label>
             <div class="col-sm-8">
@@ -279,7 +279,7 @@
                     <p>{{ getErrorMessageEditSpecie("sex") }}</p>
                 </div>
             </div>
-        </div> 
+        </div>
         <div class="form-group row">
             <label for="ovate" class="col-sm-4 col-form-label">Ovada</label>
             <div class="col-sm-8">
@@ -291,7 +291,7 @@
                     <p>{{ getErrorMessageEditSpecie("ovate") }}</p>
                 </div>
             </div>
-        </div> 
+        </div>
         <div class="form-group row">
             <label for="observations" class="col-sm-4 col-form-label">Observaciones</label>
             <div class="col-sm-8">
@@ -300,11 +300,11 @@
                     <p>{{ getErrorMessageEditSpecie("observations") }}</p>
                 </div>
             </div>
-        </div> 
+        </div>
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" (click)="closeModalS()">Cancelar</button>
-  
+
           <button type="submit" class="btn btn-primary">Editar</button>
         </div>
       </form>
@@ -313,17 +313,17 @@
 
 <!--- Modal edit People -->
 <ng-template #editModalPeople let-modal>
-  
+
     <div class="modal-header">
 
         <h5 class="modal-title" id="editLabel">Editar Personas</h5>
-    
+
         <button type="button" class="close" (click)="closeModalS()" aria-label="Close">
         <span aria-hidden="true">&times;</span>
         </button>
-    
+
     </div>
-    
+
     <div class="modal-body">
         <form [formGroup]="formEditPeople" (ngSubmit)="saveChangePeople()">
             <div class="form-group row">
@@ -337,9 +337,9 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" (click)="closeModalS()">Cancelar</button>
-    
+
                 <button type="submit" class="btn btn-primary">Editar</button>
-            </div> 
+            </div>
         </form>
     </div>
 </ng-template>

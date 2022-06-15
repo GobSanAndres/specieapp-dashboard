@@ -7,10 +7,10 @@
                     <input type="text" name="search" placeholder="Buscar formulario" class="form-control w-auto" (input)="filterModule($event)" />
                     <button type="button"  class="btn btn-primary ml-auto" (click)="openModal(modalAddModule)"><i class="fas fa-plus"></i> Agregar Módulo</button>
                     <button *ngIf="id_view === 0" type="button" class="btn btn-danger ml-1" (click)='giveDataOff(false)'>
-                        <i class="fas fa-minus-circle" name="Inhabilitados"></i> 
+                        <i class="fas fa-minus-circle" name="Inhabilitados"></i>
                     </button>
                     <button *ngIf="id_view !== 0" type="button" class="btn btn-success ml-1" (click)='giveDataOff(true)'>
-                        <i class="fas fa-check-circle" name="Habilitados"></i> 
+                        <i class="fas fa-check-circle" name="Habilitados"></i>
                     </button>
                 </div>
                 <div class="table-responsive">
@@ -47,11 +47,11 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="d-flex justify-content-center mt-2">    
+                <div class="d-flex justify-content-center mt-2">
                     <ngb-pagination [(page)]="numberPages"
                     [pageSize]="numberDataShow"
                     [collectionSize]="moduleArray.length"
-                    [maxSize]="5"></ngb-pagination>
+                    ></ngb-pagination>
                 </div>
             </div>
         </div>
@@ -61,21 +61,21 @@
 
 <!--- Modal add module -->
 <ng-template #modalAddModule let-modal>
-  
+
     <div class="modal-header">
-  
+
       <h5 class="modal-title" id="editLabel">Agregar Módulo</h5>
-  
+
       <button type="button" class="close" (click)="closeModal()" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-  
+
     </div>
-  
+
     <div class="modal-body">
-  
+
       <form [formGroup]="formModule" (ngSubmit)="saveDataModule()">
-  
+
         <div class="form-group row">
             <label for="code" class="col-sm-4 col-form-label">Código</label>
             <div class="col-sm-8">
@@ -106,7 +106,7 @@
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
-  
+
           <button type="submit" class="btn btn-primary">Guardar</button>
         </div>
       </form>
@@ -115,21 +115,21 @@
 
 <!--- Modal edit module -->
 <ng-template #modalEditModule let-modal>
-  
+
     <div class="modal-header">
-  
+
       <h5 class="modal-title" id="editLabel">Editar Módulo</h5>
-  
+
       <button type="button" class="close" (click)="closeModal()" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-  
+
     </div>
-  
+
     <div class="modal-body">
-  
+
       <form [formGroup]="formEditModule" (ngSubmit)="updateDataModule()">
-  
+
         <div class="form-group row">
             <label for="code" class="col-sm-4 col-form-label">Código</label>
             <div class="col-sm-8">
@@ -160,7 +160,7 @@
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
-  
+
           <button type="submit" class="btn btn-primary">Editar</button>
         </div>
       </form>

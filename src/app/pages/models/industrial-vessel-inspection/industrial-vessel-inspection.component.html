@@ -6,11 +6,11 @@
                 <div class="d-md-flex mt-3">
                     <input type="text" name="search" placeholder="Buscar inspección industrial" class="form-control w-auto" (input)="filterIndustrialVesselInspection($event)" />
                     <button *ngIf="id_view === 0" type="button" class="btn btn-danger ml-1" (click)='giveDataOff(false)'>
-                        <i class="fas fa-minus-circle" name="Inhabilitados"></i> 
+                        <i class="fas fa-minus-circle" name="Inhabilitados"></i>
                     </button>
                     <button *ngIf="id_view !== 0" type="button" class="btn btn-success ml-1" (click)='giveDataOff(true)'>
-                        <i class="fas fa-check-circle" name="Habilitados"></i> 
-                    </button>   
+                        <i class="fas fa-check-circle" name="Habilitados"></i>
+                    </button>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-striped no-wrap border mt-4">
@@ -68,11 +68,11 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="d-flex justify-content-center mt-2">    
+                <div class="d-flex justify-content-center mt-2">
                     <ngb-pagination [(page)]="numberPages"
                     [pageSize]="numberDataShow"
                     [collectionSize]="industrialVesselInspectionArray.length"
-                    [maxSize]="5"></ngb-pagination>
+                    ></ngb-pagination>
                 </div>
             </div>
         </div>
@@ -81,19 +81,19 @@
 
 <!--- Modal edit IndustrialVesselInspection 1 -->
 <ng-template #editIndustrialVesselInspectionModalOne let-modal>
-  
+
     <div class="modal-header">
-  
+
       <h5 class="modal-title" id="editLabel">Información general</h5>
-  
+
       <button type="button" class="close" (click)="closeModal()" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-  
+
     </div>
-  
+
     <div class="modal-body">
-  
+
       <form [formGroup]="formEditIndustrialVesselInspection" (ngSubmit)="updateDataIndustrialVesselInspection(0)">
         <div class="form-group row">
             <label for="create_by" class="col-sm-4 col-form-label">Creado por</label>
@@ -116,7 +116,7 @@
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
-  
+
           <button type="submit" class="btn btn-primary">Editar</button>
         </div>
       </form>
@@ -125,21 +125,21 @@
 
 <!--- Modal edit IndustrialVesselInspection 2 -->
 <ng-template #editIndustrialVesselInspectionModalTwo let-modal>
-  
+
     <div class="modal-header">
-  
+
       <h5 class="modal-title" id="editLabel">Áreas de pesca</h5>
-  
+
       <button type="button" class="close" (click)="closeModal()" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-  
+
     </div>
-  
+
     <div class="modal-body">
-  
+
       <form [formGroup]="formEditIndustrialVesselInspection" (ngSubmit)="updateDataIndustrialVesselInspection(2)">
-        
+
         <div class="form-group row">
             <label for="fishing_areas" class="col-sm-4 col-form-label">Área de pesca:</label>
             <div class="col-sm-8 select-icon">
@@ -159,7 +159,7 @@
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
-  
+
           <button type="submit" class="btn btn-primary">Editar</button>
         </div>
       </form>
@@ -168,21 +168,21 @@
 
 <!--- Modal edit IndustrialVesselInspection 3 -->
 <ng-template #editIndustrialVesselInspectionModalThree let-modal>
-  
+
     <div class="modal-header">
-  
+
       <h5 class="modal-title" id="editLabel">Control de muestra langosta</h5>
-  
+
       <button type="button" class="close" (click)="closeModal()" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-  
+
     </div>
-  
+
     <div class="modal-body">
-  
+
       <form [formGroup]="formEditIndustrialVesselInspection" (ngSubmit)="updateDataIndustrialVesselInspection(2)">
-  
+
         <div class="form-group row">
             <label for="observations" class="col-sm-4 col-form-label">Observaciones</label>
             <div class="col-sm-8">
@@ -201,7 +201,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
-  
+
           <button type="submit" class="btn btn-primary">Editar</button>
         </div>
       </form>

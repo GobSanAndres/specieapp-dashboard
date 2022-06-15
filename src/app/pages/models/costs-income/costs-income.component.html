@@ -6,11 +6,11 @@
                 <div class="d-md-flex mt-3">
                     <input type="text" name="search" placeholder="Buscar costos e Ingresos" class="form-control w-auto" (input)="filterCostsIncome($event)" />
                     <button *ngIf="id_view === 0" type="button" class="btn btn-danger ml-1" (click)='giveDataOff(false)'>
-                        <i class="fas fa-minus-circle" name="Inhabilitados"></i> 
+                        <i class="fas fa-minus-circle" name="Inhabilitados"></i>
                     </button>
                     <button *ngIf="id_view !== 0" type="button" class="btn btn-success ml-1" (click)='giveDataOff(true)'>
-                        <i class="fas fa-check-circle" name="Habilitados"></i> 
-                    </button>   
+                        <i class="fas fa-check-circle" name="Habilitados"></i>
+                    </button>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-striped no-wrap border mt-4">
@@ -57,11 +57,11 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="d-flex justify-content-center mt-2">    
+                <div class="d-flex justify-content-center mt-2">
                     <ngb-pagination [(page)]="numberPages"
                     [pageSize]="numberDataShow"
                     [collectionSize]="costsIncomeArray.length"
-                    [maxSize]="5"></ngb-pagination>
+                    ></ngb-pagination>
                 </div>
             </div>
         </div>
@@ -70,21 +70,21 @@
 
 <!--- Modal edit CostsIncome 1 -->
 <ng-template #editCostsIncomeModalOne let-modal>
-  
+
     <div class="modal-header">
-  
+
       <h5 class="modal-title" id="editLabel">Editar datos génericos</h5>
-  
+
       <button type="button" class="close" (click)="closeModal()" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-  
+
     </div>
-  
+
     <div class="modal-body">
-  
+
       <form [formGroup]="formEditCostsIncome" (ngSubmit)="updateDataCostsIncome()">
-  
+
         <div class="form-group row">
             <label for="registry_number" class="col-sm-4 col-form-label">Número de registro</label>
             <div class="col-sm-8">
@@ -115,7 +115,7 @@
                     <p>{{ getErrorMessageEdit("person_type") }}</p>
                 </div>
             </div>
-        </div> 
+        </div>
         <!-- SELECT -->
         <div class="form-group row">
             <label for="gender" class="col-sm-4 col-form-label">Género</label>
@@ -128,7 +128,7 @@
                     <p>{{ getErrorMessageEdit("gender") }}</p>
                 </div>
             </div>
-        </div> 
+        </div>
         <div class="form-group row">
             <label for="create_by" class="col-sm-4 col-form-label">Creado por</label>
             <div class="col-sm-8">
@@ -148,7 +148,7 @@
                     <p>{{ getErrorMessageEdit("nit") }}</p>
                 </div>
             </div>
-        </div> 
+        </div>
         <!-- SELECT -->
         <div class="form-group row">
             <label for="localization" class="col-sm-4 col-form-label">Localización</label>
@@ -171,7 +171,7 @@
                     <p>{{ getErrorMessageEdit("identification") }}</p>
                 </div>
             </div>
-        </div> 
+        </div>
         <div class="form-group row">
             <label for="informant_name" class="col-sm-4 col-form-label">Nombre Propietario</label>
             <div class="col-sm-8">
@@ -180,11 +180,11 @@
                     <p>{{ getErrorMessageEdit("informant_name") }}</p>
                 </div>
             </div>
-        </div> 
+        </div>
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
-  
+
           <button type="submit" class="btn btn-primary">Editar</button>
         </div>
       </form>
@@ -193,21 +193,21 @@
 
 <!--- Modal edit CostsIncome 2 -->
 <ng-template #editCostsIncomeModalTwo let-modal>
-  
+
     <div class="modal-header">
-  
+
       <h5 class="modal-title" id="editLabel">Editar gastos de producción</h5>
-  
+
       <button type="button" class="close" (click)="closeModal()" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-  
+
     </div>
-  
+
     <div class="modal-body">
-  
+
       <form [formGroup]="formEditCostsIncome" (ngSubmit)="updateDataCostsIncome()">
-        
+
         <div class="form-group row">
             <label for="production_expenses" class="col-sm-4 col-form-label">Gastos por: </label>
             <div class="col-sm-8 select-icon">
@@ -227,7 +227,7 @@
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
-  
+
           <button type="submit" class="btn btn-primary">Editar</button>
         </div>
       </form>
@@ -236,21 +236,21 @@
 
 <!--- Modal edit CostsIncome 3 -->
 <ng-template #editCostsIncomeModalThree let-modal>
-  
+
     <div class="modal-header">
-  
+
       <h5 class="modal-title" id="editLabel">Editar ventas e ingresos por producción</h5>
-  
+
       <button type="button" class="close" (click)="closeModal()" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-  
+
     </div>
-  
+
     <div class="modal-body">
-  
+
       <form [formGroup]="formEditCostsIncome" (ngSubmit)="updateDataCostsIncome()">
-  
+
         <div class="form-group row">
             <label for="cultivation_sales" class="col-sm-4 col-form-label">Cultivos</label>
             <div class="col-sm-8 select-icon">
@@ -289,12 +289,12 @@
             <label for="income_different_products" class="col-sm-10 col-form-label">Ingresos distintos de la venta de producto </label>
             <a (click)="openModalEditIncomeDifferent(posIncome)" class="link" [ngClass]="{'disable': posIncome === undefined}" placement="top" ngbTooltip="Edit">
                 <i class="ti-pencil m-r-10 cursor" [ngClass]="{'disable': posIncome === undefined, 'text-info': posIncome !== undefined}" ></i>
-            </a> 
+            </a>
         </div>
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
-  
+
           <button type="submit" class="btn btn-primary">Editar</button>
         </div>
       </form>

@@ -7,10 +7,10 @@
                     <input type="text" name="search" placeholder="Buscar pregunta" class="form-control w-auto" (input)="filterQuestion($event)" />
                     <button type="button"  class="btn btn-primary ml-auto" (click)="openModal(modalAddQuestion)"><i class="fas fa-plus"></i> Agregar Pregunta</button>
                     <button *ngIf="id_view === 0" type="button" class="btn btn-danger ml-1" (click)='giveDataOff(false)'>
-                        <i class="fas fa-minus-circle" name="Inhabilitados"></i> 
+                        <i class="fas fa-minus-circle" name="Inhabilitados"></i>
                     </button>
                     <button *ngIf="id_view !== 0" type="button" class="btn btn-success ml-1" (click)='giveDataOff(true)'>
-                        <i class="fas fa-check-circle" name="Habilitados"></i> 
+                        <i class="fas fa-check-circle" name="Habilitados"></i>
                     </button>
                 </div>
                 <div class="table-responsive">
@@ -65,11 +65,11 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="d-flex justify-content-center mt-2">    
+                <div class="d-flex justify-content-center mt-2">
                     <ngb-pagination [(page)]="numberPages"
                     [pageSize]="numberDataShow"
                     [collectionSize]="questionArray.length"
-                    [maxSize]="5"></ngb-pagination>
+                    ></ngb-pagination>
                 </div>
             </div>
         </div>
@@ -99,29 +99,29 @@
                         <p>{{ getErrorMessage("section_form") }}</p>
                     </div>
                 </div>
-            </div> 
+            </div>
             <div class="form-group row">
                 <label for="nameQuestion" class="col-sm-4 col-form-label">Pregunta Asociada</label>
                 <div class="col-sm-8">
                     <select class="form-control" formControlName="nameQuestion" id="nameQuestion">
                         <optgroup label="Mediciones">
                             <option *ngFor="let item of questionNameArray.measurement_data" [value]="item">{{item}}</option>
-                        </optgroup> 
+                        </optgroup>
                         <optgroup label="Control de Pesos">
                             <option *ngFor="let item of questionNameArray.weight_check" [value]="item">{{item}}</option>
-                        </optgroup> 
+                        </optgroup>
                         <optgroup label="Actividades">
                             <option *ngFor="let item of questionNameArray.activitie" [value]="item">{{item}}</option>
-                        </optgroup> 
+                        </optgroup>
                         <optgroup label="Desembarco">
                             <option *ngFor="let item of questionNameArray.monitoring" [value]="item">{{item}}</option>
-                        </optgroup> 
+                        </optgroup>
                         <optgroup label="Desembarco Industrial">
                             <option *ngFor="let item of questionNameArray.industrial_vessel" [value]="item">{{item}}</option>
-                        </optgroup> 
+                        </optgroup>
                         <optgroup label="Productores Agropecuarios">
                             <option *ngFor="let item of questionNameArray.agricultural_producer" [value]="item">{{item}}</option>
-                        </optgroup> 
+                        </optgroup>
                         <optgroup label="Costos e Ingresos">
                             <option *ngFor="let item of questionNameArray.cost_and_income" [value]="item">{{item}}</option>
                         </optgroup>
@@ -139,7 +139,7 @@
                         <p>{{ getErrorMessage("nameQuestion") }}</p>
                     </div>
                 </div>
-            </div> 
+            </div>
             <div class="form-group row">
                 <label for="description" class="col-sm-4 col-form-label">Descripción</label>
                 <div class="col-sm-8">
@@ -148,7 +148,7 @@
                         <p>{{ getErrorMessage("description") }}</p>
                     </div>
                 </div>
-            </div> 
+            </div>
             <div class="form-group row">
                 <label for="widget_type" class="col-sm-4 col-form-label">Tipo de Input</label>
                 <div class="col-sm-8">
@@ -170,7 +170,7 @@
                         <p>{{ getErrorMessage("dataType") }}</p>
                     </div>
                 </div>
-            </div> 
+            </div>
             <div class="form-group row" *ngIf="inputDataStatus">
                 <label for="min" class="col-sm-4 col-form-label">Mínimo</label>
                 <div class="col-sm-8">
@@ -179,7 +179,7 @@
                         <p>{{ getErrorMessage("min") }}</p>
                     </div>
                 </div>
-            </div> 
+            </div>
             <div class="form-group row" *ngIf="inputDataStatus">
                 <label for="max" class="col-sm-4 col-form-label">Máximo</label>
                 <div class="col-sm-8">
@@ -188,7 +188,7 @@
                         <p>{{ getErrorMessage("max") }}</p>
                     </div>
                 </div>
-            </div> 
+            </div>
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">Requerido</label>
                 <div class="col-sm-8">
@@ -218,21 +218,21 @@
 
 <!--- Modal edit questions -->
 <ng-template #editQuestionModal let-modal>
-  
+
     <div class="modal-header">
-  
+
       <h5 class="modal-title" id="editLabel">Editar Pregunta</h5>
-  
+
       <button type="button" class="close" (click)="closeModal()" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-  
+
     </div>
-  
+
     <div class="modal-body">
-  
+
       <form [formGroup]="formEditQuestion" (ngSubmit)="updateDataQuestion()">
-  
+
         <div class="form-group row">
             <label for="section_form" class="col-sm-4 col-form-label">Sección asociada</label>
             <div class="col-sm-8">
@@ -243,20 +243,20 @@
                     <p>{{ getErrorMessageEdit("section_form") }}</p>
                 </div>
             </div>
-        </div> 
+        </div>
         <div class="form-group row">
             <label for="nameQuestion" class="col-sm-4 col-form-label">Pregunta Asociada</label>
             <div class="col-sm-8">
                 <select class="form-control" formControlName="nameQuestion" id="nameQuestion">
                     <optgroup label="Mediciones">
                         <option *ngFor="let item of questionNameArray.measurement_data" [value]="item">{{item}}</option>
-                    </optgroup> 
+                    </optgroup>
                     <optgroup label="Control de Pesos">
                         <option *ngFor="let item of questionNameArray.weight_check" [value]="item">{{item}}</option>
-                    </optgroup> 
+                    </optgroup>
                     <optgroup label="Actividades">
                         <option *ngFor="let item of questionNameArray.activitie" [value]="item">{{item}}</option>
-                    </optgroup> 
+                    </optgroup>
                     <optgroup label="Desembarco">
                         <option *ngFor="let item of questionNameArray.monitoring" [value]="item">{{item}}</option>
                     </optgroup>
@@ -283,7 +283,7 @@
                     <p>{{ getErrorMessageEdit("nameQuestion") }}</p>
                 </div>
             </div>
-        </div> 
+        </div>
         <div class="form-group row">
             <label for="description" class="col-sm-4 col-form-label">Descripción</label>
             <div class="col-sm-8">
@@ -292,7 +292,7 @@
                     <p>{{ getErrorMessageEdit("description") }}</p>
                 </div>
             </div>
-        </div> 
+        </div>
         <div class="form-group row">
             <label for="widget_type" class="col-sm-4 col-form-label">Tipo de Input</label>
             <div class="col-sm-8">
@@ -315,7 +315,7 @@
                     <p>{{ getErrorMessageEdit("dataType") }}</p>
                 </div>
             </div>
-        </div>  
+        </div>
         <div class="form-group row" *ngIf="inputDataStatus">
             <label for="min" class="col-sm-4 col-form-label">Mínimo</label>
             <div class="col-sm-8">
@@ -324,7 +324,7 @@
                     <p>{{ getErrorMessageEdit("min") }}</p>
                 </div>
             </div>
-        </div> 
+        </div>
         <div class="form-group row" *ngIf="inputDataStatus">
             <label for="max" class="col-sm-4 col-form-label">Máximo</label>
             <div class="col-sm-8">
@@ -333,7 +333,7 @@
                     <p>{{ getErrorMessageEdit("max") }}</p>
                 </div>
             </div>
-        </div> 
+        </div>
         <div class="form-group row">
             <label for="required" class="col-sm-4 col-form-label">Requerido</label>
             <div class="col-sm-8">
@@ -351,12 +351,12 @@
                     </div>
                 </div>
             </div>
-        </div> 
-        
+        </div>
+
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
-  
+
           <button type="submit" class="btn btn-primary">Editar</button>
         </div>
       </form>

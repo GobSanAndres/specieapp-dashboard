@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FishermenComponent } from './pages/fishermen/fishermen.component';
 import { BoatsComponent } from './pages/boats/boats.component';
 import {FormsModule} from "@angular/forms";
-import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {NgbModule, NgbPaginationModule} from "@ng-bootstrap/ng-bootstrap";
 import { AvatarModule } from 'ngx-avatar';
 
 
@@ -16,6 +16,7 @@ import { AvatarModule } from 'ngx-avatar';
     CommonModule,
     FormsModule,
     NgbModule,
+    NgbPaginationModule,
     AvatarModule
   ],
   exports: [

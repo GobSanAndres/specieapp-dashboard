@@ -2,7 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule, NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { QuillModule } from 'ngx-quill';
 
@@ -120,6 +120,7 @@ import {RgpSaiModule} from "../modules/rgp-sai/rgp-sai.module";
     DragDropModule,
     NgxChartsModule,
     QuillModule.forRoot(),
+    NgbPaginationModule,
   ],
   providers: [
     StaticPagesService,

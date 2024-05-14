@@ -23,8 +23,6 @@ import { NgbdDatepickerLanguageComponent } from './language-datepicker/language-
 import { ButtonsComponent } from './buttons/buttons.component';
 import { CardsComponent } from './card/card.component';
 import { NotifierComponent } from './notifier/notifier.component';
-import { ToastComponent } from './toast/toast.component';
-import { ToastsContainer } from './toast/toast-container';
 
 @NgModule({
   imports: [
@@ -51,10 +49,8 @@ import { ToastsContainer } from './toast/toast-container';
     NgbdtypeheadBasicComponent,
     ButtonsComponent,
     CardsComponent,
-    ToastComponent,
-    ToastsContainer,
     NotifierComponent,
-    NgbdDatepickerLanguageComponent
+    NgbdDatepickerLanguageComponent,
   ]
 })
 export class ComponentsModule {}

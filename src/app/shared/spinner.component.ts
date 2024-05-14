@@ -3,14 +3,14 @@ import {
   Input,
   OnDestroy,
   Inject,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
 import {
   Router,
   NavigationStart,
   NavigationEnd,
   NavigationCancel,
-  NavigationError
+  NavigationError,
 } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
 
@@ -22,7 +22,7 @@ import { DOCUMENT } from '@angular/common';
           <div class="double-bounce2"></div>
         </div>
     </div>`,
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class SpinnerComponent implements OnDestroy {
   public isSpinnerVisible = true;
@@ -31,23 +31,23 @@ export class SpinnerComponent implements OnDestroy {
 
   constructor(
     private router: Router,
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
   ) {
     this.router.events.subscribe(
-      event => {
+      (event) => {
         if (event instanceof NavigationStart) {
           this.isSpinnerVisible = true;
         } else if (
-          event instanceof NavigationEnd ||
-          event instanceof NavigationCancel ||
-          event instanceof NavigationError
+          event instanceof NavigationEnd
+          || event instanceof NavigationCancel
+          || event instanceof NavigationError
         ) {
           this.isSpinnerVisible = false;
         }
       },
       () => {
         this.isSpinnerVisible = false;
-      }
+      },
     );
   }
 

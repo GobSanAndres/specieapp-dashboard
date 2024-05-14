@@ -1,17 +1,19 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
-declare var $: any;
 
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
 @Component({
   selector: 'app-full-layout',
   templateUrl: './full.component.html',
-  styleUrls: ['./full.component.scss']
+  styleUrls: ['./full.component.scss'],
 })
 export class FullComponent implements OnInit {
   public config: PerfectScrollbarConfigInterface = {};
-  active=1;
+
+  active = 1;
+
+  public user;
 
   constructor(public router: Router) { }
 
@@ -20,9 +22,13 @@ export class FullComponent implements OnInit {
   public isCollapsed = false;
 
   public innerWidth: any;
+
   public defaultSidebar: any;
+
   public showSettings = false;
+
   public showMobileMenu = false;
+
   public expandLogo = false;
 
   options = {
@@ -35,7 +41,7 @@ export class FullComponent implements OnInit {
     boxed: 'full', // two possible values: full, boxed
     navbarbg: 'skin6', // six possible values: skin(1/2/3/4/5/6)
     sidebarbg: 'skin5', // six possible values: skin(1/2/3/4/5/6)
-    logobg: 'skin6' // six possible values: skin(1/2/3/4/5/6)
+    logobg: 'skin6', // six possible values: skin(1/2/3/4/5/6)
   };
 
   Logo() {
@@ -105,5 +111,4 @@ export class FullComponent implements OnInit {
   handleClick(event: boolean) {
     this.showMobileMenu = event;
   }
-
 }

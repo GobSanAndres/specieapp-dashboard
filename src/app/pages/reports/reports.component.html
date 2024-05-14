@@ -1,0 +1,33 @@
+<div class="row ml-1">
+    <form [formGroup]="reportForm" (ngSubmit)="getReport(this.reportsExportCsv)">
+        <div class="form-group">
+            <label for="item" class="col-form-label">Modelo</label>
+            <select class="form-control" formControlName="model" id="model" (change)="changeModel($event.target.value)">
+                <option *ngFor="let item of modelsArray" [value]="item.id">{{item.description}}</option>
+            </select>
+        </div>
+
+        <div class="form-group" *ngIf="selectTrue">
+            <label for="item" class="col-form-label">Campo a consultar</label>
+            <div>
+                <select class="form-control" formControlName="item" id="item">
+                    <option *ngFor="let data of arrayName" [value]="data">{{ data }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="item" class="col-form-label">Filtro</label>
+            <select class="form-control" formControlName="filter" id="filter">
+                <option *ngFor="let item of optionsArray" [value]="item.id">{{item.description}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="item" class="col-form-label">Fecha</label>
+            <input type="date" class="form-control" formControlName="date" id="date">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Generar</button>
+        </div>
+    </form>
+</div>

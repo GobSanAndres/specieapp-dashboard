@@ -1,6 +1,7 @@
 // ======================================================
 // Custom layout variables
 // ======================================================
+@use "sass:math";
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700");
 
 // ======================================================
@@ -229,7 +230,7 @@ $h3-font-size: 21px !default;
 $h4-font-size: 18px !default;
 $h5-font-size: 16px !default;
 $h6-font-size: 14px !default;
-$headings-margin-bottom: (1rem / 2) !default;
+$headings-margin-bottom: math.div(1rem, 2) !default;
 $headings-font-weight: 400 !default;
 $headings-color: #455a64 !default;
 

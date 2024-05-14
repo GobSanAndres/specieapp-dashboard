@@ -1,0 +1,22 @@
+.select-icon {
+    display: flex;
+    align-items: center;
+}
+
+.disable { 
+    pointer-events: none; 
+    cursor: default; 
+    color: rgba(160, 149, 149, 0.459);
+}
+
+.scroll {
+	overflow-y: auto;
+}
+
+.h-auto {
+    height: auto;
+}
+
+.h-max {
+    height: 110px;
+}

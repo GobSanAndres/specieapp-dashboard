@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: true,
+  ssaypBackendUrl: 'http://127.0.0.1',
+  port: 443,
+  rgpBackendUrl: 'https://backendpruebas.rgpsai.org',
 };
 
 /*

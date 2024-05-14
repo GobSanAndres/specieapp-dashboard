@@ -1,22 +1,36 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { RouteInfo } from './vertical-sidebar.metadata';
-import { ROUTES } from './vertical-menu-items';
-
+import { RouteAdmin, RoutesAgro, RoutesPesca } from './vertical-menu-items';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root',
 })
 export class VerticalSidebarService {
+  public screenWidth: any;
 
-    public screenWidth: any;
-    public collapseSidebar: boolean = false;
-    public fullScreen: boolean = false;
+  public collapseSidebar: boolean = false;
 
-    MENUITEMS: RouteInfo[] = ROUTES;
+  public fullScreen: boolean = false;
 
-    items = new BehaviorSubject<RouteInfo[]>(this.MENUITEMS);
+  public tipoUsuario:string;
 
-    constructor() {
+  MENUITEMS: RouteInfo[];
+
+  items;
+
+  constructor() {
+    // do nothing
+  }
+
+  elegirMenuPerzonalisado() {
+    if (this.tipoUsuario === 'admin') {
+      this.MENUITEMS = RouteAdmin;
+    } else if (this.tipoUsuario === 'pesca') {
+      this.MENUITEMS = RoutesPesca;
+    } else if (this.tipoUsuario === 'agro') {
+      this.MENUITEMS = RoutesAgro;
     }
+    this.items = new BehaviorSubject<RouteInfo[]>(this.MENUITEMS);
+  }
 }

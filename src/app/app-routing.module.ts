@@ -1,9 +1,7 @@
-import { NgModule } from '@angular/core';
-
 import { Routes } from '@angular/router';
-import { FullComponent } from './layouts/full/full.component';
-import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
+import { FullComponent } from './layouts/full/full.component';
+import { LoginComponent } from './pages/auth/login/login.component';
 
 export const Approutes: Routes = [
   {
@@ -13,21 +11,17 @@ export const Approutes: Routes = [
     children: [
       { path: '', redirectTo: '/login', pathMatch: 'full' },
       {
-        path: 'starter',
-        loadChildren: () => import('./starter/starter.module').then(m => m.StarterModule)
+        path: 'pages',
+        loadChildren: () => import('./pages/pages.module').then((m) => m.PagesModule),
       },
-      {
-        path: 'component',
-        loadChildren: () => import('./component/component.module').then(m => m.ComponentsModule)
-      }
-    ]
+    ],
   },
   {
     path: '**',
-    redirectTo: '/login'
+    redirectTo: '/login',
   },
   {
     path: 'login',
     component: LoginComponent,
-  }
+  },
 ];

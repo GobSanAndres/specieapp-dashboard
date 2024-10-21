@@ -18,10 +18,10 @@ export class RgpSaiService {
   }
 
   public getBoats(type: string, params: any) {
-    return this.http.get<any>(`${environment.rgpBackendUrl}/boat/list-boats-rgp/${type}`, { headers: this.defaultHeaders, params });
+    return this.http.get<any>(`${environment.ssaypBackendUrl}/boat/list-boats-rgp/${type}`, { headers: this.defaultHeaders, params });
   }
 
   public getFisherman(type: string, params: any) {
-    return this.http.get<any>(`${environment.rgpBackendUrl}/fishermen/list-fishermen-rgp/${type}`, { headers: this.defaultHeaders, params });
+    return this.http.get<any>(`${environment.ssaypBackendUrl}/fishermen/list-fishermen-rgp/${type}`, { headers: this.defaultHeaders, params });
   }
 }

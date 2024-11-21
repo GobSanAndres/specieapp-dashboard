@@ -4,32 +4,60 @@
       <div class="card-body">
         <h4 class="card-title mb-0">Tabla de Pescadores </h4>
         <div class="d-flex mt-3">
-          <div ngbDropdown >
-            <button type="button" class="btn btn-outline-primary" id="dropdownBasic" ngbDropdownToggle>{{currentFilterType}}</button>
-            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-              <button ngbDropdownItem (click)="setFilters({type: 'type', value: 'UNO' , desc: 'Artesanales'})">Artesanales</button>
-              <button ngbDropdownItem (click)="setFilters({type: 'type', value: 'DOS' , desc: 'Industriales'})">Industriales</button>
-              <button ngbDropdownItem (click)="setFilters({type: 'type', value: 'TRES' , desc: 'Deportivos'})">Deportivos</button>
-            </div>
+          <!-- Filtro Tipo -->
+          <div class="d-flex align-items-center me-3">
+            <i class="fas fa-users"></i> <!-- Icono para Tipo -->
+            <select
+              class="form-select ms-2"
+              [(ngModel)]="currentType"
+              (change)="setFilters({type: 'type', value: $event.target.value, desc: getFilterDesc('type', $event.target.value)})">
+              <option [value]="">Selecciona tipo</option>
+              <option value="UNO">Artesanales</option>
+              <option value="DOS">Industriales</option>
+              <option value="TRES">Deportivos</option>
+            </select>
           </div>
-          <div ngbDropdown >
-            <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{currentFilterLocation}}</button>
-            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-              <button ngbDropdownItem (click)="setFilters({type: 'location', value: '' , desc: 'Vigencia permiso'})">Todos</button>
-              <button ngbDropdownItem (click)="setFilters({type: 'location', value: 'UNO' , desc: 'SAN ANDRÉS'})">SAN ANDRÉS</button>
-              <button ngbDropdownItem (click)="setFilters({type: 'location', value: 'DOS' , desc: 'PROVIDENCIAS'})">PROVIDENCIAS</button>
-            </div>
+        
+          <!-- Filtro Ubicación -->
+          <div class="d-flex align-items-center me-3">
+            <i class="fas fa-map-marker-alt"></i> <!-- Icono para Ubicación -->
+            <select
+              class="form-select ms-2"
+              [(ngModel)]="location"
+              (change)="setFilters({type: 'location', value: $event.target.value, desc: getFilterDesc('location', $event.target.value)})">
+              <option [value]="">Vigencia permiso</option>
+              <option value="UNO">SAN ANDRÉS</option>
+              <option value="DOS">PROVIDENCIAS</option>
+            </select>
           </div>
-          <div ngbDropdown >
-            <button type="button" class="btn btn-outline-primary" id="dropdownBasic2" ngbDropdownToggle>{{currentFilterValidity}}</button>
-            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-              <button ngbDropdownItem (click)="setFilters({type: 'validity', value: '' , desc: 'Vigencia del pescador'})">Todos</button>
-              <button ngbDropdownItem (click)="setFilters({type: 'validity', value: '1' , desc: 'Vigencia (SI)'})">SI</button>
-              <button ngbDropdownItem (click)="setFilters({type: 'validity', value: '0' , desc: 'Vigencia (NO)'})">NO</button>
-            </div>
+        
+          <!-- Filtro Vigencia -->
+          <div class="d-flex align-items-center me-3">
+            <i class="fas fa-calendar-check"></i> <!-- Icono para Vigencia -->
+            <select
+              class="form-select ms-2"
+              [(ngModel)]="validity"
+              (change)="setFilters({type: 'validity', value: $event.target.value, desc: getFilterDesc('validity', $event.target.value)})">
+              <option [value]="">Vigencia del pescador</option>
+              <option value="1">SI</option>
+              <option value="0">NO</option>
+            </select>
           </div>
-          <input type="text" [(ngModel)]="search"  placeholder="Buscar pescador" class="form-control w-auto" (ngModelChange)="filterFisherman()" />
+        
+          <!-- Búsqueda -->
+          <div class="d-flex align-items-center">
+            <input
+              type="text"
+              [(ngModel)]="search"
+              placeholder="Buscar pescador"
+              class="form-control w-auto ms-2"
+              (ngModelChange)="filterFisherman()"
+            />
+          </div>
         </div>
+        
+        
+        
 
         <div class="table-responsive">
           <table class="table table-striped no-wrap border mt-4">

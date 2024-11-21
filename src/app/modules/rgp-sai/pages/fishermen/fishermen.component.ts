@@ -101,4 +101,27 @@ export class FishermenComponent implements AfterViewInit {
     }
     this.getFisherman();
   }
+
+  getFilterDesc(type: string, value: string): string {
+    const descriptions = {
+      type: {
+        UNO: 'Artesanales',
+        DOS: 'Industriales',
+        TRES: 'Deportivos',
+      },
+      location: {
+        UNO: 'SAN ANDRÉS',
+        DOS: 'PROVIDENCIAS',
+        '': 'Vigencia permiso',
+      },
+      validity: {
+        '1': 'Vigencia (SI)',
+        '0': 'Vigencia (NO)',
+        '': 'Vigencia del pescador',
+      },
+    };
+  
+    return descriptions[type]?.[value] || '';
+  }
+  
 }

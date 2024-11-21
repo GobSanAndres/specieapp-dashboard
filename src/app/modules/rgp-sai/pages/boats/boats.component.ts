@@ -104,4 +104,29 @@ export class BoatsComponent implements AfterViewInit {
     }
     this.getBoats();
   }
+
+  getFilterDesc(type: string, value: string): string {
+    const descriptions = {
+      type: {
+        ART: 'Artesanales',
+        IND: 'Industriales',
+        '': 'Todos',
+      },
+      validity: {
+        active: 'Permiso vigente',
+        expired: 'Permiso vencido',
+        canceled: 'Permiso cancelado',
+        '': 'Todos',
+      },
+      patent: {
+        active: 'Patente vigente',
+        expired: 'Patente vencida',
+        withoutPatent: 'Sin patente',
+        '': 'Todos',
+      },
+    };
+  
+    return descriptions[type]?.[value] || '';
+  }
+  
 }

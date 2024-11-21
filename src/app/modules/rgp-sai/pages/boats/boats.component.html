@@ -5,14 +5,12 @@
         <h4 class="card-title mb-0">Tabla de Embarcaciones </h4>
 
         <div class="d-flex mt-3">
-          <!-- Filtro Tipo -->
           <select class="form-select me-2" [(ngModel)]="currentFilterType" (change)="setFilters({type: 'type', value: $event.target.value, desc: getFilterDesc('type', $event.target.value)})">
             <option value="">Selecciona tipo</option>
             <option value="ART">Artesanales</option>
             <option value="IND">Industriales</option>
           </select>
         
-          <!-- Filtro Vigencia -->
           <select class="form-select me-2" [(ngModel)]="currentFilterValidity" (change)="setFilters({type: 'validity', value: $event.target.value, desc: getFilterDesc('validity', $event.target.value)})">
             <option value="">Todos</option>
             <option value="active">Vigente</option>
@@ -20,7 +18,6 @@
             <option value="canceled">Cancelado</option>
           </select>
         
-          <!-- Filtro Patente -->
           <select class="form-select me-2" [(ngModel)]="currentFilterPatent" (change)="setFilters({type: 'patent', value: $event.target.value, desc: getFilterDesc('patent', $event.target.value)})">
             <option value="">Todos</option>
             <option value="active">Vigente</option>
@@ -28,7 +25,6 @@
             <option value="withoutPatent">Sin patente</option>
           </select>
         
-          <!-- Búsqueda -->
           <input type="text" [(ngModel)]="search" placeholder="Buscar embarcación" class="form-control w-auto" (ngModelChange)="filterBoat()" />
         </div>
         

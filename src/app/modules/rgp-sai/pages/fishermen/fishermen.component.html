@@ -4,9 +4,9 @@
       <div class="card-body">
         <h4 class="card-title mb-0">Tabla de Pescadores </h4>
         <div class="d-flex mt-3">
-          <!-- Filtro Tipo -->
+
           <div class="d-flex align-items-center me-3">
-            <i class="fas fa-users"></i> <!-- Icono para Tipo -->
+            <i class="fas fa-users"></i> 
             <select
               class="form-select ms-2"
               [(ngModel)]="currentType"
@@ -18,9 +18,8 @@
             </select>
           </div>
         
-          <!-- Filtro Ubicación -->
           <div class="d-flex align-items-center me-3">
-            <i class="fas fa-map-marker-alt"></i> <!-- Icono para Ubicación -->
+            <i class="fas fa-map-marker-alt"></i> 
             <select
               class="form-select ms-2"
               [(ngModel)]="location"
@@ -31,9 +30,8 @@
             </select>
           </div>
         
-          <!-- Filtro Vigencia -->
           <div class="d-flex align-items-center me-3">
-            <i class="fas fa-calendar-check"></i> <!-- Icono para Vigencia -->
+            <i class="fas fa-calendar-check"></i> 
             <select
               class="form-select ms-2"
               [(ngModel)]="validity"
@@ -44,7 +42,6 @@
             </select>
           </div>
         
-          <!-- Búsqueda -->
           <div class="d-flex align-items-center">
             <input
               type="text"
@@ -57,8 +54,6 @@
         </div>
         
         
-        
-
         <div class="table-responsive">
           <table class="table table-striped no-wrap border mt-4">
             <thead>

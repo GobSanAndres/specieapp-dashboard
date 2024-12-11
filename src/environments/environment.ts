@@ -4,7 +4,7 @@
 
 export const environment = {
   production: true,
-  ssaypBackendUrl: 'https://ssayp-backend.rgpsai.org',
+  ssaypBackendUrl: 'http://127.0.0.1',
   port: 443,
   rgpBackendUrl: 'https://backendpruebas.rgpsai.org',
 };

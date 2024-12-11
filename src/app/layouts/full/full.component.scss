@@ -1,6 +1,10 @@
 .page-wrapper {
-    background-image: url("/assets/images/img-sanandres.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+    url('/assets/images/Lets_Keep_Legal_-_Logo-01.jpg');
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
+

@@ -87,7 +87,7 @@ export class BoatsComponent implements AfterViewInit {
       return 'Sin dato';
     }
   }
-
+/*
   setFilters(param: {type: string; value: string, desc: string}) {
     this.swal.notificationLoading('Procesando petición!!');
     if (param.type === 'patent') {
@@ -103,7 +103,29 @@ export class BoatsComponent implements AfterViewInit {
       this.currentFilterType = param.desc
     }
     this.getBoats();
+  }*/
+
+  setFilters(param: { type: string; value: string; desc: string }) {
+    switch (param.type) {
+      case 'patent':
+        this.validityPatent = param.value;
+        this.currentFilterPatent = param.desc || 'Todos';
+        break;
+      case 'validity':
+        this.validity = param.value;
+        this.currentFilterValidity = param.desc || 'Todos';
+        break;
+      case 'type':
+        this.currentType = param.value;
+        this.currentFilterType = param.desc || 'Selecciona tipo';
+        break;
+    }
+
+    this.swal.notificationLoading('Procesando petición!!');
+    this.getBoats();
   }
+
+
 
   getFilterDesc(type: string, value: string): string {
     const descriptions = {
@@ -125,8 +147,8 @@ export class BoatsComponent implements AfterViewInit {
         '': 'Todos',
       },
     };
-  
+
     return descriptions[type]?.[value] || '';
   }
-  
+
 }

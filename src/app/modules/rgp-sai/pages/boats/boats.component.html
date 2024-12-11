@@ -5,29 +5,57 @@
         <h4 class="card-title mb-0">Tabla de Embarcaciones </h4>
 
         <div class="d-flex mt-3">
-          <select class="form-select me-2" [(ngModel)]="currentFilterType" (change)="setFilters({type: 'type', value: $event.target.value, desc: getFilterDesc('type', $event.target.value)})">
-            <option value="">Selecciona tipo</option>
-            <option value="ART">Artesanales</option>
-            <option value="IND">Industriales</option>
-          </select>
-        
-          <select class="form-select me-2" [(ngModel)]="currentFilterValidity" (change)="setFilters({type: 'validity', value: $event.target.value, desc: getFilterDesc('validity', $event.target.value)})">
-            <option value="">Todos</option>
-            <option value="active">Vigente</option>
-            <option value="expired">Vencido</option>
-            <option value="canceled">Cancelado</option>
-          </select>
-        
-          <select class="form-select me-2" [(ngModel)]="currentFilterPatent" (change)="setFilters({type: 'patent', value: $event.target.value, desc: getFilterDesc('patent', $event.target.value)})">
-            <option value="">Todos</option>
-            <option value="active">Vigente</option>
-            <option value="expired">Vencida</option>
-            <option value="withoutPatent">Sin patente</option>
-          </select>
-        
-          <input type="text" [(ngModel)]="search" placeholder="Buscar embarcación" class="form-control w-auto" (ngModelChange)="filterBoat()" />
+
+          <div class="d-flex align-items-center me-3">
+            <i class="fas fa-ship"></i>
+            <select
+              class="form-select ms-2 m-2"
+              [(ngModel)]="currentType"
+              (change)="setFilters({type: 'type', value: currentType, desc: getFilterDesc('type', currentType)})">
+              <option [value]="">Selecciona tipo</option>
+              <option value="ART">Artesanales</option>
+              <option value="IND">Industriales</option>
+            </select>
+          </div>
+
+          <div class="d-flex align-items-center me-3">
+            <i class="fas fa-calendar-alt"></i>
+            <select
+              class="form-select ms-2 m-2"
+              [(ngModel)]="validity"
+              (change)="setFilters({type: 'validity', value: validity, desc: getFilterDesc('validity', validity)})">
+              <option [value]="">Todos</option>
+              <option value="active">Vigente</option>
+              <option value="expired">Vencido</option>
+              <option value="canceled">Cancelado</option>
+            </select>
+          </div>
+
+          <div class="d-flex align-items-center me-3">
+            <i class="fas fa-award"></i>
+            <select
+              class="form-select ms-2 m-2"
+              [(ngModel)]="validityPatent"
+              (change)="setFilters({type: 'patent', value: validityPatent, desc: getFilterDesc('patent', validityPatent)})">
+              <option [value]="">Todos</option>
+              <option value="active">Vigente</option>
+              <option value="expired">Vencida</option>
+              <option value="withoutPatent">Sin patente</option>
+            </select>
+          </div>
+
+          <div class="d-flex align-items-center">
+            <input
+              type="text"
+              [(ngModel)]="search"
+              placeholder="Buscar embarcación"
+              class="form-control w-auto ms-2"
+              (ngModelChange)="filterBoat()"
+            />
+          </div>
+
         </div>
-        
+
 
         <div class="table-responsive">
           <table class="table table-striped no-wrap border mt-4">

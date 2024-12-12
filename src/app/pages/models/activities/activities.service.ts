@@ -24,15 +24,15 @@ export class ActivitiesService {
   port = environment.port;
 
   getActivities(status:boolean) {
-    return this.http.get(`${this.configUrl}:${this.port}/v1/api/activitie/list?limit=250&active=${status}&limit=1000`, { headers: this.token });
+    return this.http.get(`${this.configUrl}:${this.port}/v1/api/activitie/list?active=${status}&limit=1000`, { headers: this.token });
   }
 
   getFishingSite(status:boolean) {
-    return this.http.get(`${this.configUrl}:${this.port}/v1/api/fishing-site/list?limit=250&active=${status}&limit=1000`, { headers: this.token });
+    return this.http.get(`${this.configUrl}:${this.port}/v1/api/fishing-site/list?active=${status}&limit=1000`, { headers: this.token });
   }
 
   getFishingArt(status:boolean) {
-    return this.http.get(`${this.configUrl}:${this.port}/v1/api/fishing-art/list?limit=250&active=${status}&limit=1000`, { headers: this.token });
+    return this.http.get(`${this.configUrl}:${this.port}/v1/api/fishing-art/list?active=${status}&limit=1000`, { headers: this.token });
   }
 
   getUsers(status:boolean) {
